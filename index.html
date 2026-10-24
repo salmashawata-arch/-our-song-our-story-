@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Song, Our Story ♡</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;padding:24px 16px;
+ background:#eee2cd;color:#54232c;
+ font-family:Georgia,'Times New Roman',serif;
+ display:flex;justify-content:center;align-items:center;
+}
+.card{
+ width:100%;max-width:520px;background:#f9f1e3;
+ border:1px solid #b58b68;outline:5px double #74343d;
+ padding:30px 24px;text-align:center;
+ box-shadow:0 12px 35px #58342a22;
+}
+.small{font-size:11px;letter-spacing:4px;text-transform:uppercase}
+h1{font-size:32px;font-weight:normal;margin:20px 0 8px}
+.rule{width:70px;border:0;border-top:1px solid #a87c66;margin:20px auto}
+.intro{font-size:15px;line-height:1.8}
+button{
+ border:1px solid #74343d;background:#74343d;color:#fff1dd;
+ padding:13px 20px;font:inherit;cursor:pointer;
+}
+.envelope{font-size:64px;margin:20px 0;cursor:pointer}
+#letter{display:none;text-align:left;line-height:1.9;font-size:16px}
+#letter p{margin:0 0 16px}
+input{
+ width:100%;padding:12px;margin:12px 0;
+ background:#fffaf1;border:1px solid #b58b68;
+ font:inherit;color:#54232c;
+}
+.note{font-size:12px;line-height:1.7;margin-top:24px}
+</style>
+</head>
+<body>
+<main class="card">
+ <div class="small">A secret message for Zeyad</div>
+ <h1>Our Song, Our Story ♡</h1>
+ <hr class="rule">
+ <p class="intro">Some stories deserve a little magic.<br>
+ This one is yours. Always. 🎬</p>
+
+ <section id="locked">
+  <div class="envelope" aria-label="Sealed love letter">💌</div>
+  <p>One little secret, made just for you.</p>
+  <p class="intro">Enter the date that holds our little secret ♡</p>
+  <input id="password" type="password" placeholder="Enter the date">
+  <button onclick="unlock()">Open your letter ♡</button>
+  <p id="error" style="display:none;color:#9b3038">Not quite, my love. Try again ♡</p>
+ </section>
+
+ <section id="letter">
+  <hr class="rule">
+  <p>Our Song, Our Story ♡</p>
+  <p>I love how a song can hold so many feelings and take me back to our second date — the day I met the love of my life.</p>
+  <p>A little hint of my love for you, hidden in an Instagram story… a secret confession of the love I was already carrying in my heart, even if I couldn't say it out loud.</p>
+  <p>And every time I listen to this song, it reminds me of just how lucky I am to have you. ❤️</p>
+  <p>Happy birthday, my baby, my favorite star in my movie. 🎬</p>
+  <p>My favorite scene will always be your eyes.</p>
+  <p>My favorite soundtrack will always be your voice.</p>
+  <p>And my favorite story will always be the life I'm living with you — the laughter, the happiness, the sadness, the longing, the distance, the successes, the tears, the failures, and even our little fights.</p>
+  <p>Because somehow, every single part of it becomes my favorite as long as I'm sharing it with you.</p>
+  <p>And no matter how many scenes are still waiting for us, you're the person I want beside me in every single one.</p>
+  <p style="text-align:right;margin-top:28px">Forever your baby,<br>Salomy ♡</p>
+  <hr class="rule">
+  <p style="text-align:center">THE END? ♡<br><small>Our story is still being written...</small></p>
+ </section>
+ <hr class="rule">
+ <div class="small">A love story in every scene</div>
+ <p class="note">Made with love, just for you ♡</p>
+</main>
+
+<script>
+function unlock(){
+ const entered=document.getElementById('password').value.trim();
+ if(entered==='24/1/2026'){
+  document.getElementById('locked').style.display='none';
+  document.getElementById('letter').style.display='block';
+  document.getElementById('error').style.display='none';
+ }else{
+  document.getElementById('error').style.display='block';
+ }
+}
+document.getElementById('password').addEventListener('keydown',function(e){
+ if(e.key==='Enter')unlock();
+});
+</script>
+</body>
+</html>
